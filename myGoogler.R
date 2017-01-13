@@ -4,8 +4,9 @@ look.for <- function(pattern, directory = ".", ...){
 
 matchPattern <- function(x, pattern, ...){
    n <- length(x)
-   lapply(1:n, function(i) {
+   m <- lapply(1:n, function(i) {
       content <- readLines(x[i])
       grep(pattern, content, ...)
    })
+   unlist(m)
 }
